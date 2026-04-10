@@ -2,9 +2,6 @@ import { useState } from 'react'
 
 export default function InternsAccordion({ interns }) {
   const [open, setOpen] = useState(false)
-  const displayCount = 3
-  const hasMore = interns.length > displayCount
-  const visible = open ? interns : interns.slice(0, displayCount)
 
   return (
     <div>
@@ -26,22 +23,15 @@ export default function InternsAccordion({ interns }) {
         </svg>
       </button>
 
-      <ul className="mt-2 space-y-1 text-sm text-slate-200">
-        {visible.map((name) => (
-          <li key={name} className="flex items-start gap-2">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
-            {name}
-          </li>
-        ))}
-      </ul>
-
-      {hasMore && (
-        <button
-          onClick={() => setOpen(!open)}
-          className="mt-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
-        >
-          {open ? 'Show less' : `Show all ${interns.length}`}
-        </button>
+      {open && (
+        <ul className="mt-2 space-y-1 text-sm text-slate-200">
+          {interns.map((name) => (
+            <li key={name} className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
+              {name}
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   )

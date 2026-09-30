@@ -18,7 +18,7 @@ export default function Timeline({ semesters }) {
               <div
                 key={sem.id}
                 className="flex shrink-0 flex-col items-center"
-                style={{ minWidth: 240 }}
+                style={{ minWidth: 320 }}
               >
                 <span className="text-sm font-semibold text-emerald-400">
                   {sem.label}
@@ -39,7 +39,7 @@ export default function Timeline({ semesters }) {
                 <div
                   key={sem.id}
                   className="flex shrink-0 items-center justify-center"
-                  style={{ minWidth: 240 }}
+                  style={{ minWidth: 320 }}
                 >
                   <div className="z-10 h-3 w-3 rounded-full border-2 border-white bg-slate-800" />
                 </div>
@@ -58,8 +58,8 @@ export default function Timeline({ semesters }) {
             {semesters.map((sem) => (
               <div
                 key={sem.id}
-                className="flex shrink-0 flex-col gap-4 px-2"
-                style={{ minWidth: 240 }}
+                className="flex shrink-0 flex-col gap-4 px-4"
+                style={{ minWidth: 320 }}
               >
                 {sem.programs.map((program) => (
                   <ProgramCard key={program.id} program={program} />
